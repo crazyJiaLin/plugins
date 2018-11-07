@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态input</title>
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/dynamic-input.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="dynamic-wrapper">
+            
+        </div>
+    </div>
+   
+</body>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/dynamic-input.js"></script>
+<script>
+    var initData = [
+        {
+            name : '陈佳霖',
+            erp : 'chenjialin1',
+            email : 'test@foxmail.com'
+        },
+        {
+            name : '陈佳霖2',
+            erp : 'chenjialin2',
+            email : 'test@foxmail.com'
+        },{
+            name : '陈佳霖3',
+            erp : 'chenjialin2',
+            email : 'test@foxmail.com'
+        }
+    ];
+    var dynamicInput = new window.DynamicInput({
+        $domWrapper : $('.dynamic-wrapper'),
+        initData : initData,
+        onChange : function(list,curData){
+            console.log(list);
+            console.log(curData)
+        }
+    });
+</script>
+</html>

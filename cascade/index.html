@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>瀑布流</title>
+	<link rel="stylesheet" href="css/cascade.css" />
+</head>
+<body>
+	<div class="wrapper clearFix">
+		<div class="cascade">
+			<div class="img-wrapper">
+				<img src="images/0.jpg" alt="" />
+				<span class="show-title">美女1</span>
+			</div>
+			<div class="img-wrapper">
+				<img src="images/1.jpg" alt="" />
+				<span class="show-title">美女1</span>
+			</div>
+			<div class="img-wrapper">
+				<img src="images/2.jpg" alt="" />
+				<span class="show-title">美女1</span>
+			</div>
+			<div class="img-wrapper">
+				<img src="images/3.jpg" alt="" />
+				<span class="show-title">美女1</span>
+			</div>
+		</div>
+		<div class="cascade">
+			<div class="img-wrapper">
+				<img src="images/4.jpg" alt="" />
+				<span class="show-title">美女1</span>
+			</div>
+			<div class="img-wrapper">
+				<img src="images/5.jpg" alt="" />
+				<span class="show-title">美女1</span>
+			</div>
+		</div>
+		<div class="cascade">
+			<div class="img-wrapper">
+				<img src="images/1.jpg" alt="" />
+				<span class="show-title">美女1</span>
+			</div>
+			<div class="img-wrapper">
+				<img src="images/7.jpg" alt="" />
+				<span class="show-title">美女1</span>
+			</div>
+			<div class="img-wrapper">
+				<img src="images/0.jpg" alt="" />
+				<span class="show-title">美女1</span>
+			</div>
+		</div>
+		<div class="cascade">
+			<div class="img-wrapper">
+				<img src="images/8.jpg" alt="" />
+				<span class="show-title">美女1</span>
+			</div>
+			<div class="img-wrapper">
+				<img src="images/9.jpg" alt="" />
+				<span class="show-title">美女1</span>
+			</div>
+			<div class="img-wrapper">
+				<img src="images/2.jpg" alt="" />
+				<span class="show-title">美女1</span>
+			</div>
+			<div class="img-wrapper">
+				<img src="images/3.jpg" alt="" />
+				<span class="show-title">美女1</span>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<!--loading-->
+		<div class="sk-spinner-wave">
+			<div class="sk-rect1"></div>
+			<div class="sk-rect2"></div>
+			<div class="sk-rect3"></div>
+			<div class="sk-rect4"></div>
+			<div class="sk-rect5"></div>
+		</div>
+	</div>
+	
+	<script src="js/jquery-3.1.0.min.js"></script>
+	<script src="js/cascade.js"></script>
+	<script type="text/javascript">
+		//遵行的DOM结构，可以没有span
+//		<div class="img-wrapper">
+//			<img src="images/0.jpg" alt="" />
+//			<span class="show-title"></span>
+//		</div>
+		var Cascade = new Cascade({
+			$cascadeWrapper : $('.wrapper'),				//必传
+			cascades :  $('.wrapper').children('.cascade'),	//必传
+			imgWrapperClass : 'img-wrapper',				//选传
+			imgClass : '',									//选传
+			hasTitle : true,									//选传
+			titleClass : 'show-title'						//选传
+		});
+	</script>
+</body>
+</html>

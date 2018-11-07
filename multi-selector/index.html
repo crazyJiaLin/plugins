@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>multi-selector</title>
+    <link rel="stylesheet" href="../dynamic-input/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./multi-selector.css">
+</head>
+<body>
+    
+    <div class="multi-selector-wrapper">
+        <div class="multi-selector-input-wrapper">
+            <div class="mulit-selector-input">
+                <span class="multi-selector-placeholder">多选</span>
+            </div>
+            <i class="fa fa-caret-down"></i>
+        </div>
+        <ul class="multi-selector-list">
+            <li class="multi-selector-item active" >
+                <span class="multi-selector-item-html">你好</span> 
+                <i class="fa fa-check"></i>
+            </li>
+        </ul>
+    </div>
+
+    <script src="./jquery.min.js"></script>
+    <script src="./multi-selector.js"></script>
+    <script>
+        var initData = {
+            app1 : {
+                partner_id : 1234,
+                ptnr_name : 'ptnr_name',
+                select : true
+            },
+            app2 : {
+                partner_id : 222,
+                ptnr_name : 'ptnr_name2',
+            },
+            app3 : {
+                partner_id : 1234,
+                ptnr_name : 'ptnr_name3',
+                select : true
+            },
+            app4 : {
+                partner_id : 222,
+                ptnr_name : 'ptnr_name4'
+            },app5 : {
+                partner_id : 1234,
+                ptnr_name : 'ptnr_name5'
+            },
+            app6 : {
+                partner_id : 222,
+                ptnr_name : 'ptnr_name6',
+                select : true
+            }
+        }
+        var multiSelector = new MultiSelector({
+            $domWrapper : $('.multi-selector-wrapper'),
+            initData : initData,
+            onChange : function(list,curData){
+                console.log(list);
+                console.log(curData)
+            }
+        });
+        // var timer = setTimeout(function(){
+        //     multiSelector.reset({
+        //         app5 : {
+        //             partner_id : 1234,
+        //             ptnr_name : 'ptnr_name5'
+        //         },
+        //         app6 : {
+        //             partner_id : 222,
+        //             ptnr_name : 'ptnr_name6',
+        //             select : true
+        //         }
+        //     });
+        // },1000);
+    </script>
+</body>
+</html>
